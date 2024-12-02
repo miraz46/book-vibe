@@ -1,0 +1,81 @@
+[
+    {
+      "bookId": 1,
+      "bookName": "The Silent Patient",
+      "author": "Alex Michaelides",
+      "image": "https://i.ibb.co.com/MB52WRr/1-1.png",
+      "review": "A stunning psychological thriller with an unforgettable twist.",
+      "totalPages": 336,
+      "rating": 4.5,
+      "category": "Fiction",
+      "tags": ["Suspense", "Psychological", "Thriller"],
+      "publisher": "Celadon Books",
+      "yearOfPublishing": 2019
+    },
+    {
+      "bookId": 2,
+      "bookName": "Educated",
+      "author": "Tara Westover",
+      "image": "https://i.ibb.co.com/xqBxr9h/1-2.png",
+      "review": "A gripping memoir about the transformative power of education.",
+      "totalPages": 334,
+      "rating": 4.8,
+      "category": "Memoir",
+      "tags": ["Inspiring", "Biography", "Education"],
+      "publisher": "Random House",
+      "yearOfPublishing": 2018
+    },
+    {
+      "bookId": 3,
+      "bookName": "Atomic Habits",
+      "author": "James Clear",
+      "image": "https://i.ibb.co.com/HtsxN1f/1-3.png",
+      "review": "An insightful guide to building better habits every day.",
+      "totalPages": 320,
+      "rating": 4.9,
+      "category": "Self-help",
+      "tags": ["Productivity", "Habits", "Psychology"],
+      "publisher": "Avery",
+      "yearOfPublishing": 2018
+    },
+    {
+      "bookId": 4,
+      "bookName": "Becoming",
+      "author": "Michelle Obama",
+      "image": "https://i.ibb.co.com/gZbRLWw/1-4.png",
+      "review": "A deeply personal and inspiring memoir from the former First Lady.",
+      "totalPages": 448,
+      "rating": 4.7,
+      "category": "Biography",
+      "tags": ["Inspiring", "Political", "Memoir"],
+      "publisher": "Crown Publishing Group",
+      "yearOfPublishing": 2018
+    },
+    {
+      "bookId": 5,
+      "bookName": "Dune",
+      "author": "Frank Herbert",
+      "image": "https://i.ibb.co.com/KKLXvv9/1-5.png",
+      "review": "A science fiction masterpiece exploring power, faith, and politics.",
+      "totalPages": 412,
+      "rating": 4.6,
+      "category": "Science Fiction",
+      "tags": ["Epic", "Futuristic", "Adventure"],
+      "publisher": "Chilton Books",
+      "yearOfPublishing": 1965
+    },
+    {
+      "bookId": 6,
+      "bookName": "Sapiens: A Brief History of Humankind",
+      "author": "Yuval Noah Harari",
+      "image": "https://i.ibb.co.com/wBpsqWD/1-6.png",
+      "review": "A fascinating exploration of human history and our place in the world.",
+      "totalPages": 498,
+      "rating": 4.8,
+      "category": "Non-fiction",
+      "tags": ["History", "Anthropology", "Philosophy"],
+      "publisher": "Harper",
+      "yearOfPublishing": 2011
+    }
+  ]
+  
