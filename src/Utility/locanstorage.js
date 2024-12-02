@@ -8,7 +8,7 @@ const getStoredBookLists = () => {
 
 const saveStoredBookLists = (id) => {
   const storedBookLists = getStoredBookLists();
-  const exists = storedBookLists.find((bookId) => bookId === id);
+  const exists = storedBookLists.find(bookId => bookId === id);
   if (!exists) {
     storedBookLists.push(id);
     localStorage.setItem("book-lists", JSON.stringify(storedBookLists));

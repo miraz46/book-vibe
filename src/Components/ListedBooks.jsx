@@ -2,25 +2,22 @@ import { useEffect, useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
 import { useLoaderData } from "react-router-dom";
 import { getStoredBookLists } from "../Utility/locanstorage";
+import ListedBooksCards from "./ListedBooksCards";
+
 
 const ListedBooks = () => {
     const [read, setRead] = useState(true);
     const [wish, setWish] = useState(false)
 
     const allBooks =useLoaderData();
-    const [storedBook, setStoredBooks]=useState([])
+    const [storedBooks, setStoredBooks]=useState([]);
+
 
     useEffect(()=>{
         const storedBooksListsId = getStoredBookLists();
-        console.log(storedBooksListsId);
-        // const parseStoredBookLists = JSON.parse(storedBooksListsId);
-        console.log()
         if(allBooks.length > 0){
-            const storedBooksLists = [];
-            for(const id of storedBooksListsId){
-                
-                console.log(id);
-            }
+            const booksListed = allBooks.filter(book => storedBooksListsId.includes(book.bookId))
+            setStoredBooks(booksListed);
         }
     },[allBooks])
 
@@ -52,21 +49,10 @@ const ListedBooks = () => {
                 <a onClick={handleWishlist} role="tab" className={`tab  ${wish && 'tab-active'}`}>Wishlist Books</a>
             </div>
             {/* Cards */}
-            <div className={`${read || 'hidden'} mt-8`}>
-                <div className="card lg:card-side h-[277px] bg-base-100 border-[1px]">
-                    <figure>
-                        <img
-                            src="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp"
-                            alt="Album" />
-                    </figure>
-                    <div className="card-body">
-                        <h2 className="card-title">New album is released!</h2>
-                        <p>Click the button to listen on Spotiwhy app.</p>
-                        <div className="card-actions justify-end">
-                            <button className="btn btn-primary">Listen</button>
-                        </div>
-                    </div>
-                </div>
+            <div className={`${read || 'hidden'} mt-8 `}>
+                {
+                    storedBooks.map(book => <ListedBooksCards book={book} key={book.bookId}></ListedBooksCards>)
+                }
             </div>
         </div>
     );

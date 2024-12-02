@@ -9,10 +9,10 @@ import ErrorPage from './Components/ErrorPage';
 import Home from './Components/Home';
 import Root from './Components/Root';
 import ListedBooks from './Components/ListedBooks';
-import PagesToRead from './Components/PagesToRead';
 import BookDetails from './Components/BookDetails';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import TriangleBarChart from './Components/TriangleBarChart';
 
 const router = createBrowserRouter([
   {
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/pagesToRead",
-        element: <PagesToRead></PagesToRead>,
+        element: <TriangleBarChart></TriangleBarChart>,
       },
       {
         path: "/bookDetails/:bookId",

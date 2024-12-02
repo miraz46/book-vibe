@@ -8,7 +8,7 @@ const BookDetails = () => {
     const bookInt = parseInt(bookId)
     const book = books.find(book => book.bookId === bookInt);
     const { bookName, author, image, review, totalPages, rating, category, tags, publisher, yearOfPublishing } = book;
-    console.log(typeof bookId)
+    
 
     const readBooks = () => {
         saveStoredBookLists(bookInt)
