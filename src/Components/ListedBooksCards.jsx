@@ -1,9 +1,10 @@
 import { CiLocationOn } from "react-icons/ci";
 import { IoPeople } from "react-icons/io5";
 import { RiPagesFill } from "react-icons/ri";
+import { NavLink } from "react-router-dom";
 
 const ListedBooksCards = ({ book }) => {
-    const { bookName, author, image, review, totalPages, rating, category, tags, publisher, yearOfPublishing } = book;
+    const { bookId, bookName, author, image, totalPages, rating, category, tags, publisher, yearOfPublishing } = book;
     // console.log(typeof totalPages)
     return (
         <div className="card card-side bg-base-100 shadow-xl border-[1px] mt-6">
@@ -38,7 +39,7 @@ const ListedBooksCards = ({ book }) => {
                 <div className="flex items-center gap-8 ">
                     <div className="bg-[#d6e8ff] p-3 rounded-3xl text-[#328EFF]"><p>Category: {category}</p></div>
                     <div className="bg-[#ffedd1] p-3 rounded-3xl text-[#FFAC33]"><p>Rating: {rating}</p></div>
-                    <div><button className="btn btn-success rounded-full text-white">View Details</button></div>
+                    <NavLink to={`/bookDetails/${bookId}`}><div><button className="btn btn-success rounded-full text-white">View Details</button></div></NavLink>
                 </div>
             </div>
         </div>

@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 const getStoredBookLists = () => {
   const storedBookLists = localStorage.getItem("book-lists");
   if (storedBookLists) {
@@ -8,10 +10,13 @@ const getStoredBookLists = () => {
 
 const saveStoredBookLists = (id) => {
   const storedBookLists = getStoredBookLists();
-  const exists = storedBookLists.find(bookId => bookId === id);
+  const exists = storedBookLists.find((bookId) => bookId === id);
   if (!exists) {
     storedBookLists.push(id);
     localStorage.setItem("book-lists", JSON.stringify(storedBookLists));
+    toast("Added to the read books section.");
+  } else {
+    toast.error("Already added to the read books");
   }
 };
 
@@ -29,6 +34,9 @@ const saveStoredWishLists = (id) => {
   if (!exists) {
     storedWishLists.push(id);
     localStorage.setItem("wish-lists", JSON.stringify(storedWishLists));
+    toast("Added to the wish lists section.");
+  } else {
+    toast.error("Already added to the wish lists");
   }
 };
 

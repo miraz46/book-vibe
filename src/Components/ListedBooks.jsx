@@ -7,25 +7,31 @@ import ListedBooksCards from "./ListedBooksCards";
 
 const ListedBooks = () => {
     const [read, setRead] = useState(true);
-    const [wish, setWish] = useState(false)
+    const [wish, setWish] = useState(false);
+    const allBooks = useLoaderData();
+    const [storedBooks, setStoredBooks] = useState([]);
 
-    const allBooks =useLoaderData();
-    const [storedBooks, setStoredBooks]=useState([]);
-
-
-    useEffect(()=>{
+    useEffect(() => {
         const storedBooksListsId = getStoredBookLists();
-        if(allBooks.length > 0){
+        if (allBooks.length > 0) {
             const booksListed = allBooks.filter(book => storedBooksListsId.includes(book.bookId))
             setStoredBooks(booksListed);
         }
-    },[allBooks])
+    }, [allBooks])
 
-
+    const handleSort = (order) => {
+        const sortedBooks = [...storedBooks].sort((a, b) => {
+          if (order === "asc") {
+            return a.totalPages - b.totalPages;
+          } else {
+            return b.totalPages - a.totalPages;
+          }
+        });
+        setStoredBooks(sortedBooks);
+      };
     const handleReadBooks = () => {
         setWish(false)
         setRead(true)
-
     }
     const handleWishlist = () => {
         setRead(false)
@@ -39,8 +45,8 @@ const ListedBooks = () => {
             <details className="dropdown flex justify-center mt-4 mb-14">
                 <summary className="btn m-1 text-white bg-[#23BE0A] border-none">Sort By <FaChevronDown /></summary>
                 <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-                    <li><a>Item 1</a></li>
-                    <li><a>Item 2</a></li>
+                    <li onClick={() => handleSort("asc")}><a>Smallest to Largest Page Count</a></li>
+                    <li onClick={() => handleSort("desc")}><a>Largest to Smallest Page Count</a></li>
                 </ul>
             </details>
             {/* Tab */}

@@ -1,5 +1,4 @@
 import { useLoaderData, useParams } from "react-router-dom";
-import { toast } from "react-toastify";
 import { saveStoredBookLists, saveStoredWishLists } from "../Utility/locanstorage";
 
 const BookDetails = () => {
@@ -8,15 +7,13 @@ const BookDetails = () => {
     const bookInt = parseInt(bookId)
     const book = books.find(book => book.bookId === bookInt);
     const { bookName, author, image, review, totalPages, rating, category, tags, publisher, yearOfPublishing } = book;
-    
+
 
     const readBooks = () => {
         saveStoredBookLists(bookInt)
-        toast("Added to the read books section.")
     };
     const wishLists = () => {
         saveStoredWishLists(bookInt)
-        toast("Added to the wish lists section.")
     };
 
 
